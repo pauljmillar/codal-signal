@@ -91,7 +91,7 @@ export default function ScopeForm({
               flex: 1,
               height: 4,
               borderRadius: 100,
-              background: s <= step ? "var(--accent)" : "rgba(255,255,255,0.1)",
+              background: s <= step ? "var(--accent)" : "var(--border)",
               transition: "background 0.2s",
             }}
           />
@@ -129,7 +129,7 @@ export default function ScopeForm({
                     className="pill"
                     style={{
                       cursor: "pointer",
-                      background: active ? "var(--accent-dim)" : "rgba(255,255,255,0.04)",
+                      background: active ? "var(--accent-dim)" : "var(--bg-soft)",
                       color: active ? "var(--accent-light)" : "var(--text-secondary)",
                       border: `1px solid ${active ? "rgba(53,53,232,0.4)" : "var(--border)"}`,
                       padding: "6px 12px",
@@ -193,7 +193,7 @@ export default function ScopeForm({
                     className="pill"
                     style={{
                       cursor: "pointer",
-                      background: active ? "var(--accent-dim)" : "rgba(255,255,255,0.04)",
+                      background: active ? "var(--accent-dim)" : "var(--bg-soft)",
                       color: active ? "var(--accent-light)" : "var(--text-secondary)",
                       border: `1px solid ${active ? "rgba(53,53,232,0.4)" : "var(--border)"}`,
                       padding: "6px 12px",

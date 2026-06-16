@@ -1,17 +1,12 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import TabNav from "@/components/TabNav";
 
-const jakarta = Plus_Jakarta_Sans({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-jakarta",
-});
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-dm-sans",
 });
 
 export const metadata: Metadata = {
@@ -21,10 +16,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${mono.variable}`}>
-      <body>
+    <html lang="en" className={dmSans.variable}>
+      <body style={{ fontFamily: '"DM Sans", system-ui, sans-serif' }}>
         <TabNav />
-        <main style={{ paddingTop: 112, paddingLeft: 24, paddingRight: 24, paddingBottom: 64, maxWidth: 1200, margin: "0 auto" }}>
+        <main
+          style={{
+            paddingTop: 128,
+            paddingLeft: 24,
+            paddingRight: 24,
+            paddingBottom: 80,
+            maxWidth: 1200,
+            margin: "0 auto",
+          }}
+        >
           {children}
         </main>
       </body>

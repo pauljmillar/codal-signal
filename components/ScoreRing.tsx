@@ -23,7 +23,7 @@ export default function ScoreRing({
   return (
     <div className="flex flex-col items-center">
       <svg width={size} height={size} viewBox="0 0 64 64">
-        <circle cx="32" cy="32" r={r} stroke="rgba(255,255,255,0.08)" strokeWidth="5" fill="none" />
+        <circle cx="32" cy="32" r={r} stroke="rgba(11,17,31,0.08)" strokeWidth="5" fill="none" />
         <circle
           cx="32"
           cy="32"
@@ -36,7 +36,7 @@ export default function ScoreRing({
           transform="rotate(-90 32 32)"
           style={{ transition: "stroke-dasharray 0.6s ease-out" }}
         />
-        <text x="32" y="37" textAnchor="middle" fontSize="18" fontWeight="700" fill="#fff">
+        <text x="32" y="37" textAnchor="middle" fontSize="18" fontWeight="700" fill="#0B111F">
           {v}
         </text>
       </svg>
@@ -45,7 +45,7 @@ export default function ScoreRing({
         style={{
           fontSize: 10,
           fontWeight: 500,
-          color: "rgba(255,255,255,0.45)",
+          color: "var(--text-muted)",
           letterSpacing: "0.08em",
           textTransform: "uppercase",
         }}

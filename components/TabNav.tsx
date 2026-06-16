@@ -15,11 +15,10 @@ export default function TabNav() {
       <header
         className="no-print"
         style={{
-          background: "rgba(7, 7, 42, 0.85)",
-          backdropFilter: "blur(12px)",
-          borderBottom: "1px solid rgba(255, 255, 255, 0.07)",
-          height: 56,
-          padding: "0 24px",
+          background: "#FFFFFF",
+          borderBottom: "1px solid var(--border)",
+          height: 72,
+          padding: "0 32px",
           position: "fixed",
           top: 0,
           width: "100%",
@@ -29,32 +28,29 @@ export default function TabNav() {
           justifyContent: "space-between",
         }}
       >
-        <Link href="/analyze" style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <Link href="/analyze" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
+          {/* Codal logo (dark) */}
+          <img
+            src="https://codal.com/wp-content/uploads/2025/10/logo-header.svg"
+            alt="Codal"
+            style={{ height: 22, display: "block" }}
+          />
           <span
             style={{
-              fontWeight: 700,
-              fontSize: 17,
-              color: "#fff",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Codal
-          </span>
-          <span
-            style={{
-              width: 6,
-              height: 6,
-              borderRadius: 100,
-              background: "var(--accent)",
-              boxShadow: "0 0 12px var(--accent)",
+              display: "inline-block",
+              width: 1,
+              height: 22,
+              background: "var(--border-strong)",
+              margin: "0 4px",
             }}
           />
           <span
             style={{
-              fontWeight: 600,
-              fontSize: 15,
-              color: "var(--accent-light)",
-              letterSpacing: "0.02em",
+              fontFamily: '"DM Sans", sans-serif',
+              fontWeight: 500,
+              fontSize: 16,
+              color: "var(--text-primary)",
+              letterSpacing: "-0.01em",
             }}
           >
             Signal
@@ -62,10 +58,11 @@ export default function TabNav() {
         </Link>
         <div
           style={{
-            color: "var(--text-muted)",
-            fontSize: 12,
-            letterSpacing: "0.04em",
+            color: "var(--text-secondary)",
+            fontSize: 13,
+            fontWeight: 500,
           }}
+          className="hidden md:block"
         >
           Built by Paul Millar · VP Engineering candidate
         </div>
@@ -73,11 +70,11 @@ export default function TabNav() {
       <nav
         className="no-print"
         style={{
-          background: "rgba(7, 7, 42, 0.6)",
+          background: "#FFFFFF",
           borderBottom: "1px solid var(--border)",
-          padding: "0 24px",
+          padding: "0 32px",
           position: "fixed",
-          top: 56,
+          top: 72,
           width: "100%",
           zIndex: 40,
           display: "flex",
@@ -97,6 +94,7 @@ export default function TabNav() {
                 color: active ? "var(--text-primary)" : "var(--text-secondary)",
                 borderBottom: `2px solid ${active ? "var(--accent)" : "transparent"}`,
                 transition: "color 0.15s, border-color 0.15s",
+                textDecoration: "none",
               }}
             >
               {t.label}

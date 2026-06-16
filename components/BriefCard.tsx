@@ -115,7 +115,7 @@ export default function BriefCard({
                 border: "1px solid var(--border)",
                 borderRadius: 10,
                 padding: 16,
-                background: "rgba(255,255,255,0.02)",
+                background: "var(--bg-soft)",
               }}
             >
               <div className="flex items-center justify-between mb-2">
@@ -128,7 +128,7 @@ export default function BriefCard({
                         ? "rgba(239,68,68,0.12)"
                         : f.impact === "Medium"
                         ? "var(--warning-dim)"
-                        : "rgba(255,255,255,0.05)",
+                        : "var(--bg-soft)",
                     color:
                       f.impact === "High"
                         ? "#FCA5A5"
