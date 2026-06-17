@@ -21,11 +21,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <TabNav />
         <main
           style={{
-            paddingTop: 128,
+            paddingTop: 72,
             paddingLeft: 24,
             paddingRight: 24,
-            paddingBottom: 80,
-            maxWidth: 1200,
+            paddingBottom: 64,
+            maxWidth: 1100,
             margin: "0 auto",
           }}
         >
