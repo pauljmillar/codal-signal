@@ -1,7 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { Brief, ScopeOutput } from "./types";
 
-const MODEL = "claude-sonnet-4-5";
+const MODEL = "claude-sonnet-4-6";
 
 function client() {
   return new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });

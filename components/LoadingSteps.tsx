@@ -14,7 +14,8 @@ export default function LoadingSteps() {
   useEffect(() => {
     const timers: any[] = [];
     let acc = 0;
-    const delays = [900, 1100, 1300, 1100, 1200];
+    // Advance through the first 4 steps; hold on the last step until unmount.
+    const delays = [900, 1100, 1300, 1100];
     delays.forEach((d, i) => {
       acc += d;
       timers.push(setTimeout(() => setActive(i + 1), acc));
