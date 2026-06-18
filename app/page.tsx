@@ -30,10 +30,25 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
   const [history, setHistory] = useState<HistoryEntry[]>([]);
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   useEffect(() => {
     setHistory(loadHistory());
+    try {
+      const saved = window.localStorage.getItem("signal:sidebar-open");
+      if (saved !== null) setSidebarOpen(saved === "1");
+    } catch {}
   }, []);
+
+  const toggleSidebar = () => {
+    setSidebarOpen((v) => {
+      const next = !v;
+      try {
+        window.localStorage.setItem("signal:sidebar-open", next ? "1" : "0");
+      } catch {}
+      return next;
+    });
+  };
 
   const submit = async (e?: React.FormEvent) => {
     e?.preventDefault();
@@ -117,20 +132,21 @@ export default function Home() {
       <HistorySidebar
         entries={history}
         activeId={activeId}
+        open={sidebarOpen}
+        onToggle={toggleSidebar}
         onSelect={onSelect}
         onNew={reset}
         onDelete={onDelete}
         onClear={onClear}
       />
       <main
+        className={`signal-main${sidebarOpen ? " sidebar-open" : ""}`}
         style={{
-          marginLeft: 0,
           paddingTop: 72,
           paddingLeft: 24,
           paddingRight: 24,
           paddingBottom: 64,
         }}
-        className="signal-main"
       >
         <div style={{ maxWidth: 980, margin: "0 auto" }}>
           {!brief && !loading && (
@@ -167,11 +183,6 @@ export default function Home() {
           )}
         </div>
       </main>
-      <style>{`
-        @media (min-width: 768px) {
-          .signal-main { margin-left: 260px; }
-        }
-      `}</style>
     </>
   );
 }

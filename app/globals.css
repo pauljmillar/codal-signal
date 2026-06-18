@@ -41,26 +41,18 @@ html, body {
   position: relative;
 }
 
-/* Codal hero-style decorative gradient blob, anchored top-right */
-body::before {
-  content: "";
-  position: fixed;
-  top: -640px;
-  right: -480px;
-  width: 1180px;
-  height: 1180px;
-  background-image: url("https://codal.com/wp-content/themes/codal/assets/css2/images/page-header-bg-new.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  transform: rotate(14.9deg);
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.9;
-}
-
 main {
   position: relative;
   z-index: 1;
+}
+
+/* Main column shift to accommodate the history sidebar on desktop */
+.signal-main {
+  margin-left: 0;
+  transition: margin-left 0.2s ease;
+}
+@media (min-width: 768px) {
+  .signal-main.sidebar-open { margin-left: 260px; }
 }
 
 h1, h2, h3, h4 {
