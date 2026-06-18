@@ -19,18 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={dmSans.variable}>
       <body style={{ fontFamily: '"DM Sans", system-ui, sans-serif' }}>
         <TabNav />
-        <main
-          style={{
-            paddingTop: 72,
-            paddingLeft: 24,
-            paddingRight: 24,
-            paddingBottom: 64,
-            maxWidth: 1100,
-            margin: "0 auto",
-          }}
-        >
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   );
