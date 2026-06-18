@@ -86,9 +86,14 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ brief, partial });
   } catch (err: any) {
-    console.error("analyze error:", err);
+    const detail =
+      err?.error?.error?.message ||
+      err?.error?.message ||
+      err?.message ||
+      String(err);
+    console.error("analyze error:", detail, err);
     return NextResponse.json(
-      { error: "Analysis timed out. Try again or check that the URL is publicly accessible." },
+      { error: `Analysis failed: ${detail}` },
       { status: 500 }
     );
   }
